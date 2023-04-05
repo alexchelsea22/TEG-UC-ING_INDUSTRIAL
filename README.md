@@ -1,5 +1,4 @@
-# TEG-UC-ING_INDUSTRIAL, Programa hecho en MATLAB, referente al Trabajo Especial de Grado para optar al Título de Ingeniero Industrial, 
-en la Facultad de Ingeniería de la Universidad de Carabobo, año 2015; la cual fue reconocida con mención honorífica.
+# TEG-UC-ING_INDUSTRIAL, Programa Computarizado, elaborado en el lenguaje de programacion MATLAB, referente al Trabajo Especial de Grado para optar al Título de Ingeniero Industrial, en la Facultad de Ingeniería de la Universidad de Carabobo, año 2015; la cual fue reconocida con mención honorífica.
 
 Titulo: DESARROLLO DE UNA HERRAMIENTA COMPUTARIZADA PARA EL CONTROL ESTADÍSTICO MULTIVARIANTE DE PROCESOS BASADA EN EL ANÁLISIS DE PUNTO DE CAMBIO 
 
