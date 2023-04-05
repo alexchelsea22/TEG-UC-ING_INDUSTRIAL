@@ -2,42 +2,42 @@ function CEPM
 clear
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('Control estadÌstico multivariante de procesos: programa para el monitoreo de un vector de')
-disp('caracterÌsticas de calidad.')
+disp('Control estad√≠stico multivariante de procesos: programa para el monitoreo de un vector de')
+disp('caracter√≠sticas de calidad.')
 disp(' ');
 disp('Trabajo Especial de Grado titulado: DESARROLLO DE UNA HERRAMIENTA COMPUTARIZADA PARA EL')
-disp('CONTROL ESTADÕSTICO MULTIVARIANTE DE PROCESOS BASADA EN EL AN¡LISIS DE PUNTO DE CAMBIO.')
-disp('18 de enero de 2015, diseÒado por JosÈ Brea y Ronald Medina, Escuela de IngenierÌa')
-disp('Industrial, Facultad de IngenierÌa, Universidad de Carabobo.')
-disp('E-mail: esojmbh@gmail.com / alexchelsea222@gmail.com')
+disp('CONTROL ESTAD√çSTICO MULTIVARIANTE DE PROCESOS BASADA EN EL AN√ÅLISIS DE PUNTO DE CAMBIO.')
+disp('18 de enero de 2015, dise√±ado por Ronald Medina y B r e a , Escuela de Ingenier√≠a')
+disp('Industrial, Facultad de Ingenier√≠a, Universidad de Carabobo.')
+disp('E-mail: alexchelsea222@gmail.com')
 disp(' ');
 disp('Este programa le permite monitorear muestras tomadas secuencialmente en el tiempo y,')
 disp('estima un punto de cambio (en el caso que exista) en un proceso bajo control')
-disp('estadÌstico, es decir, realiza el an·lisis de Fase II del SPC.')
+disp('estad√≠stico, es decir, realiza el an√°lisis de Fase II del SPC.')
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('Antes de iniciar el an·lisis de Fase II, se debe analizar un conjunto de datos histÛricos,')
-disp('es decir, se debe efectuar un an·lisis de Fase I.')
+disp('Antes de iniciar el an√°lisis de Fase II, se debe analizar un conjunto de datos hist√≥ricos,')
+disp('es decir, se debe efectuar un an√°lisis de Fase I.')
 disp(' ');
-disp('Las pruebas de hipÛtesis estadÌsticas a realizar en el an·lisis de Fase I son:')
+disp('Las pruebas de hip√≥tesis estad√≠sticas a realizar en el an√°lisis de Fase I son:')
 disp(' ');
-disp('*Prueba de Schwager y Margolin para la detecciÛn de outliers.')
+disp('*Prueba de Schwager y Margolin para la detecci√≥n de outliers.')
 disp(' ');
 disp('*Prueba de normalidad multivariante de Mardia.')
 disp(' ');
-disp('*Prueba de raÌz unitaria de Fountis-Dickey.')
+disp('*Prueba de ra√≠z unitaria de Fountis-Dickey.')
 disp(' ');
-disp('*Prueba de Ljung-Box y la versiÛn multivariante de Chitturi y Hosking de la prueba de')
+disp('*Prueba de Ljung-Box y la versi√≥n multivariante de Chitturi y Hosking de la prueba de')
 disp('Portmanteau.')
 disp(' ');
-disp('SUGERENCIA: la prueba de Schwager y Margolin y prueba de Mardia dan valores crÌticos')
-disp('conservadores para tamaÒos de muestra mayores o iguales a 50.')
-b=input('øDesea realizar el an·lisis de Fase I?: No(0), Si(Cualquier otro n˙mero) ');
+disp('SUGERENCIA: la prueba de Schwager y Margolin y prueba de Mardia dan valores cr√≠ticos')
+disp('conservadores para tama√±os de muestra mayores o iguales a 50.')
+b=input('¬øDesea realizar el an√°lisis de Fase I?: No(0), Si(Cualquier otro n√∫mero) ');
 
 if b==0
     
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('La herramienta estadÌstica utilizada para el an·lisis de Fase II, es un gr·fico de control');
-disp('basado en el An·lisis de Punto de Cambio (CPA).')
+disp('La herramienta estad√≠stica utilizada para el an√°lisis de Fase II, es un gr√°fico de control');
+disp('basado en el An√°lisis de Punto de Cambio (CPA).')
 
 %Lectura de datos Fase II.
 
@@ -50,8 +50,8 @@ matr1=datos;
 if m==1
     
 disp(' ');
-disp('ERROR: LOS DATOS NO SON VECTORES DE OBSERVACI”N, ES DECIR, NO EST¡ MONITOREANDO UN VECTOR')
-disp('DE CARACTERÕSTICAS DE CALIDAD.')
+disp('ERROR: LOS DATOS NO SON VECTORES DE OBSERVACI√ìN, ES DECIR, NO EST√Å MONITOREANDO UN VECTOR')
+disp('DE CARACTER√çSTICAS DE CALIDAD.')
 disp(' ');
 
 else
@@ -60,22 +60,22 @@ else
 
 if m==2 || m==3 || m==4 || m==5 || m==10 || m==15 || m==20 || m==25
     
-%Verificando que el tamaÒo de muestra sea mayor o igual a 2(p+1).
+%Verificando que el tama√±o de muestra sea mayor o igual a 2(p+1).
     
 if t<(2*(m+1))
           
 disp(' ');
-disp('ERROR: EL TAMA—O DE MUESTRA ES MENOR AL MÕNIMO REQUERIDO.')
+disp('ERROR: EL TAMA√ëO DE MUESTRA ES MENOR AL M√çNIMO REQUERIDO.')
 disp(' ');
 
 else  
 
-%ConstrucciÛn del grafico de control.
+%Construcci√≥n del grafico de control.
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('A continuaciÛn se proceder· a construir el Gr·fico de Control del CPA.')
+disp('A continuaci√≥n se proceder√° a construir el Gr√°fico de Control del CPA.')
 disp(' ');
-disp('Deber· indicar el nivel significancia alfa (probabilidad especificada de emitir una falsa')
+disp('Deber√° indicar el nivel significancia alfa (probabilidad especificada de emitir una falsa')
 disp('alarma), cuando se le indique.')
 disp(' ');
 disp('Valores permitidos de alfa: 0.0005 0.001 0.002 0.005 0.01')
@@ -109,7 +109,7 @@ Vcrit=hdehawkins(t,m,alp5);
             parm2=correlacion(matr1,pcam,0);
             disp(parm2)
             fprintf('-------------------------------------------------------------------------------------------\n');
-            disp('Vector de medias, matriz de covarianza y matriz de correlaciones muestral despuÈs del cambio:')
+            disp('Vector de medias, matriz de covarianza y matriz de correlaciones muestral despu√©s del cambio:')
             disp(' ');
             disp('*Vector de medias:')
             parm3=vectmedia(matr1,t,pcam);
@@ -120,16 +120,16 @@ Vcrit=hdehawkins(t,m,alp5);
             disp('*Matriz de correlaciones:')
             parm5=correlacion(matr1,t,pcam);
             disp(parm5)
-            disp('Existe suficiente evidencia estadÌstica para afirmar, que ha ocurrido un cambio en el')
+            disp('Existe suficiente evidencia estad√≠stica para afirmar, que ha ocurrido un cambio en el')
             disp(['vector de medias, matriz de covarianzas o en ambos, en n igual a: ', num2str(j)]) 
             disp(' ');
-            disp(['El punto estimado en donde ocurre el cambio es en la observaciÛn: ', num2str(pcam)]) 
+            disp(['El punto estimado en donde ocurre el cambio es en la observaci√≥n: ', num2str(pcam)]) 
             disp(' ');
-            disp('ConclusiÛn: el proceso est· fuera de control, es decir, el proceso est· operando en presencia')
-            disp('de causas asignables de variaciÛn.')
+            disp('Conclusi√≥n: el proceso est√° fuera de control, es decir, el proceso est√° operando en presencia')
+            disp('de causas asignables de variaci√≥n.')
             disp(' ');
             disp('Arriba se presentan los vectores de medias, matrices de covarianzas y matrices de correlaciones')
-            disp('muestral, antes y despuÈs del cambio.')
+            disp('muestral, antes y despu√©s del cambio.')
             
             bandn1=true;
             
@@ -151,18 +151,18 @@ Vcrit=hdehawkins(t,m,alp5);
         disp('*Matriz de correlaciones:')
         parm8=correlacion(matr1,t,0);
         disp(parm8)
-        disp('No existe suficiente evidencia estadÌstica para afirmar, que ha ocurrido un cambio en el')
+        disp('No existe suficiente evidencia estad√≠stica para afirmar, que ha ocurrido un cambio en el')
         disp('vector de medias, matriz de covarianzas o en ambos.')
         disp(' ');
-        disp('ConclusiÛn: el proceso est· bajo control estadÌstico, es decir, el proceso opera ˙nicamente')
-        disp('en presencia de causas fortuitas de variaciÛn.')
+        disp('Conclusi√≥n: el proceso est√° bajo control estad√≠stico, es decir, el proceso opera √∫nicamente')
+        disp('en presencia de causas fortuitas de variaci√≥n.')
         disp(' ');
         disp('Arriba se presentan las estimaciones del vector de medias, matriz de covarianzas y matriz de')
         disp('correlaciones.')
         
     end
     
-    %Gr·fico de control
+    %Gr√°fico de control
     
 graficodecontrol=[GMaxi;Vcrit];
 
@@ -171,23 +171,23 @@ XxX=(1:t);
 yminimo=min(min(graficodecontrol));
 ymaximo=max(max(graficodecontrol)); 
 plot(XxX, GMaxi, XxX, Vcrit)
-title('GR¡FICA DE CONTROL DEL AN¡LISIS DE PUNTO DE CAMBIO.')
+title('GR√ÅFICA DE CONTROL DEL AN√ÅLISIS DE PUNTO DE CAMBIO.')
 axis([(2*(m+1)) t yminimo ymaximo])
 xlabel('MUESTRAS' )
 ylabel('Gmax,n' )
 grid on
-legend('Gmax,n','LÌmite de Control h');
+legend('Gmax,n','L√≠mite de Control h');
 datacursormode on 
        
 end
 
 else
     
-%En el caso que no se encuentre disponible la dimensiÛn del vector.
+%En el caso que no se encuentre disponible la dimensi√≥n del vector.
    
 disp(' ');
 disp('ERROR: el grafico de control no puede ser construido, debido a que no')
-disp('se encuentra disponible la dimensiÛn de su vector de observaciÛn.')
+disp('se encuentra disponible la dimensi√≥n de su vector de observaci√≥n.')
 disp(' ');
 
 end
@@ -207,19 +207,19 @@ matr=dat;
 if p==1
     
 disp(' ');
-disp('ERROR: LOS DATOS NO SON VECTORES DE OBSERVACI”N, ES DECIR, NO EST¡ MONITOREANDO UN VECTOR')
-disp('DE CARACTERÕSTICAS DE CALIDAD.')
+disp('ERROR: LOS DATOS NO SON VECTORES DE OBSERVACI√ìN, ES DECIR, NO EST√Å MONITOREANDO UN VECTOR')
+disp('DE CARACTER√çSTICAS DE CALIDAD.')
 disp(' ');
 
 else
 
-%Datos AtÌpicos (Outliers)
+%Datos At√≠picos (Outliers)
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('A continuaciÛn se realizar· la Prueba de Schwager y Margolin para la detecciÛn de outliers,')
-disp('con el fin de depurar los datos para el An·lisis de Fase I.')
+disp('A continuaci√≥n se realizar√° la Prueba de Schwager y Margolin para la detecci√≥n de outliers,')
+disp('con el fin de depurar los datos para el An√°lisis de Fase I.')
 disp(' ');
-AUT=input('øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n˙mero) ');
+AUT=input('¬øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n√∫mero) ');
 disp(' ');
 
     %Realizo la prueba de outliers
@@ -234,8 +234,8 @@ if AUT~=0
         
         disp(' ');
         disp('La matriz de covarianzas muestral de los datos es singular.')
-        disp('SI SELECCIONA SI, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        sing=input('øDesea probar con otra data?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA SI, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        sing=input('¬øDesea probar con otra data?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if sing~=0
             
@@ -246,10 +246,10 @@ if AUT~=0
     elseif condi==1
         
         disp(' ');
-        disp('Para la eliminaciÛn de valores atÌpicos (outliers), elimine las observaciones con')
+        disp('Para la eliminaci√≥n de valores at√≠picos (outliers), elimine las observaciones con')
         disp('distancias estandarizadas grandes.')
         disp(' ');
-        disp('Ingrese el nombre del archivo Excel, que contiene los datos depurados de valores atÌpicos')
+        disp('Ingrese el nombre del archivo Excel, que contiene los datos depurados de valores at√≠picos')
         disp('cuando se le indique. ');
         disp(' ');
         filename=input('Ingrese el nombre del archivo: ','s');
@@ -267,10 +267,10 @@ end
 %Prueba de Mardia
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('A continuaciÛn se realizar· la Prueba de normalidad multivariante de Mardia, con el objeto de')
+disp('A continuaci√≥n se realizar√° la Prueba de normalidad multivariante de Mardia, con el objeto de')
 disp('validar el supuesto de normalidad multivariante.')
 disp(' ');
-AUT1=input('øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n˙mero) ');
+AUT1=input('¬øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n√∫mero) ');
 disp(' ');
 
 if AUT1~=0
@@ -283,8 +283,8 @@ if AUT1~=0
         
         disp(' ');
         disp('La matriz de covarianzas muestral de los datos es singular.')
-        disp('SI SELECCIONA SI, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        sing1=input('øDesea probar con otra data?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA SI, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        sing1=input('¬øDesea probar con otra data?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if sing1~=0
             
@@ -294,8 +294,8 @@ if AUT1~=0
         
      elseif condi1==0
          
-        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        nnor=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        nnor=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if nnor==0
             
@@ -315,10 +315,10 @@ end
 %Prueba de Fountis-Dickey
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('A continuaciÛn se realizar· la Prueba de raÌz unitaria de Fountis-Dickey, la cual examina')
-disp('la existencia de una raÌz unitaria en una serie de tiempo multivariante autorregresiva.')
+disp('A continuaci√≥n se realizar√° la Prueba de ra√≠z unitaria de Fountis-Dickey, la cual examina')
+disp('la existencia de una ra√≠z unitaria en una serie de tiempo multivariante autorregresiva.')
 disp(' ');
-AUT2=input('øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n˙mero) ');
+AUT2=input('¬øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n√∫mero) ');
 disp(' ');
 
 if AUT2~=0
@@ -334,8 +334,8 @@ if AUT2~=0
         disp(' ');
         disp('La prueba de Fountis-Dickey ha fallado debido a la presencia de matrices singulares,')
         disp('el supuesto de estacionariedad en amplio sentido no puede ser validado.');
-        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        sing2=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        sing2=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if sing2==0
             
@@ -348,8 +348,8 @@ if AUT2~=0
         disp(' ');
         disp('La prueba de Fountis-Dickey ha fallado, debido a que el orden del modelo autorregresivo')
         disp('vectorial VAR(p), no ha podido ser estimado.');
-        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        noord=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        noord=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if noord==0
             
@@ -362,8 +362,8 @@ if AUT2~=0
         disp(' ');
         disp('La prueba de Fountis-Dickey ha fallado, debido a que ha ingresado un alfa fuera de los')
         disp('permitidos.');
-        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        noalfa=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        noalfa=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if noalfa==0
             
@@ -373,8 +373,8 @@ if AUT2~=0
         
     elseif condi2==0
         
-        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        noesta=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        noesta=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if noesta==0
             
@@ -387,8 +387,8 @@ if AUT2~=0
         disp(' ');
         disp('La prueba de Fountis-Dickey ha fallado, debido a que la serie de tiempo')
         disp('multivariante es explosiva.');
-        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        explosiva=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        explosiva=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if explosiva==0
             
@@ -405,21 +405,21 @@ if AUT2~=0
     
 end
 
-%EvaluaciÛn de la Independencia.
+%Evaluaci√≥n de la Independencia.
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('A continuaciÛn se probar· la independencia de los datos.')
-disp('Este an·lisis es divido en dos categorÌas:')
+disp('A continuaci√≥n se probar√° la independencia de los datos.')
+disp('Este an√°lisis es divido en dos categor√≠as:')
 disp(' ');
-disp('*CATEGORÕA I: prueba la independencia en cada componente univariante de la serie de')
+disp('*CATEGOR√çA I: prueba la independencia en cada componente univariante de la serie de')
 disp('tiempo multivariante.');
 disp(' ');
-disp('*CATEGORÕA II: prueba la existencia de una dependencia lineal din·mica en los datos de')
+disp('*CATEGOR√çA II: prueba la existencia de una dependencia lineal din√°mica en los datos de')
 disp('la serie de tiempo multivariante.')
 disp(' ');
-disp('CATEGORÕA I: Prueba de Ljung-Box');
+disp('CATEGOR√çA I: Prueba de Ljung-Box');
 disp(' ');
-AUT3=input('øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n˙mero) ');
+AUT3=input('¬øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n√∫mero) ');
 disp(' ');
 
 if AUT3~=0
@@ -428,7 +428,7 @@ if AUT3~=0
       
     condi3=LBprueba(matr,alp3);
 
-    [tam,tam1]=size(condi3); %TamaÒo del vector
+    [tam,tam1]=size(condi3); %Tama√±o del vector
     
     bandn=false;
     
@@ -448,11 +448,11 @@ if AUT3~=0
 end  
 
 disp(' ');
-disp('CATEGORÕA II: VersiÛn multivariante de Chitturi y Hosking de la prueba de Portmanteau.');
-disp('En esta categorÌa se prueba la existencia de una dependencia lineal din·mica en los datos de')
+disp('CATEGOR√çA II: Versi√≥n multivariante de Chitturi y Hosking de la prueba de Portmanteau.');
+disp('En esta categor√≠a se prueba la existencia de una dependencia lineal din√°mica en los datos de')
 disp('la serie de tiempo multivariante.')
 disp(' ');
-AUT4=input('øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n˙mero) ');
+AUT4=input('¬øDesea aplicar esta prueba?: No(0), Si(Cualquier otro n√∫mero) ');
 disp(' ');
 
 if AUT4~=0
@@ -465,8 +465,8 @@ if AUT4~=0
        
         disp(' ');
         disp('La matriz de covarianzas muestral de los datos es singular.')
-        disp('SI SELECCIONA SI, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-        sing3=input('øDesea probar con otra data?: No(0), Si(Cualquier otro n˙mero) ');
+        disp('SI SELECCIONA SI, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+        sing3=input('¬øDesea probar con otra data?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if sing3~=0
             
@@ -478,16 +478,16 @@ if AUT4~=0
     
 end
 
-    %DecisiÛn de la prueba de Independencia
+    %Decisi√≥n de la prueba de Independencia
 
 if AUT3~=0 && AUT4~=0
         
 if bandn==true && condi4==1
     
     disp(' ');
-    disp('Los datos son independientes solo en la categorÌa II.')
-    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-    ind=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+    disp('Los datos son independientes solo en la categor√≠a II.')
+    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+    ind=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if ind==0
             
@@ -498,9 +498,9 @@ if bandn==true && condi4==1
 elseif bandn==false && condi4==0
     
     disp(' ');
-    disp('Los datos son independientes solo en la categorÌa I.')
-    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-    ind1=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+    disp('Los datos son independientes solo en la categor√≠a I.')
+    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+    ind1=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if ind1==0
             
@@ -511,9 +511,9 @@ elseif bandn==false && condi4==0
 elseif bandn==true && condi4==0
     
     disp(' ');
-    disp('Los datos no son independientes en ambas categorÌas.')
-    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-    ind2=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro n˙mero) ');
+    disp('Los datos no son independientes en ambas categor√≠as.')
+    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+    ind2=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro n√∫mero) ');
         
         if ind2==0
             
@@ -530,11 +530,11 @@ end
 
 elseif AUT3==0 && AUT4~=0
     
-    disp('No se puede tomar una decisiÛn con respecto a la independencia, debido a que no se ejecutaron')
-    disp('las pruebas de independencia para ambas categorÌas.')
+    disp('No se puede tomar una decisi√≥n con respecto a la independencia, debido a que no se ejecutaron')
+    disp('las pruebas de independencia para ambas categor√≠as.')
     disp(' ');
-    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-    ind3=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro numero) ');
+    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+    ind3=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro numero) ');
         
         if ind3==0
             
@@ -544,11 +544,11 @@ elseif AUT3==0 && AUT4~=0
 
 elseif AUT3~=0 && AUT4==0
     
-    disp('No se puede tomar una decisiÛn con respecto a la independencia, debido a que no se ejecutaron')
-    disp('las pruebas de independencia para ambas categorÌas.')
+    disp('No se puede tomar una decisi√≥n con respecto a la independencia, debido a que no se ejecutaron')
+    disp('las pruebas de independencia para ambas categor√≠as.')
     disp(' ');
-    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR¡ SU EJECUCI”N.')
-    ind4=input('øDesea continuar con el an·lisis?: No(0), Si(Cualquier otro numero) ');
+    disp('SI SELECCIONA NO, EL PROGRAMA DETENDR√Å SU EJECUCI√ìN.')
+    ind4=input('¬øDesea continuar con el an√°lisis?: No(0), Si(Cualquier otro numero) ');
         
         if ind4==0
             
@@ -559,12 +559,12 @@ elseif AUT3~=0 && AUT4==0
 end
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('Ha finalizado el an·lisis de Fase I.')
+disp('Ha finalizado el an√°lisis de Fase I.')
 disp(' ');
-disp('A CONTINUACI”N INICIARA EL AN¡LISIS DE FASE II.')
+disp('A CONTINUACI√ìN INICIARA EL AN√ÅLISIS DE FASE II.')
 disp(' ');
-disp('La herramienta estadÌstica utilizada para el an·lisis es un gr·fico de control basado en el');
-disp('An·lisis de Punto de Cambio (CPA).')
+disp('La herramienta estad√≠stica utilizada para el an√°lisis es un gr√°fico de control basado en el');
+disp('An√°lisis de Punto de Cambio (CPA).')
 disp(' ');
 disp('*PRESIONE CUALQUIER TECLA PARA CONTINUAR.') %Pausa
 pause  
@@ -580,8 +580,8 @@ matr1=datos;
 if m==1
     
 disp(' ');
-disp('ERROR: LOS DATOS NO SON VECTORES DE OBSERVACI”N, ES DECIR, NO EST¡ MONITOREANDO UN VECTOR')
-disp('DE CARACTERÕSTICAS DE CALIDAD.')
+disp('ERROR: LOS DATOS NO SON VECTORES DE OBSERVACI√ìN, ES DECIR, NO EST√Å MONITOREANDO UN VECTOR')
+disp('DE CARACTER√çSTICAS DE CALIDAD.')
 disp(' ');
 
 else
@@ -590,22 +590,22 @@ else
 
 if m==2 || m==3 || m==4 || m==5 || m==10 || m==15 || m==20 || m==25
     
-%Verificando que el tamaÒo de muestra sea mayor o igual a 2(p+1).
+%Verificando que el tama√±o de muestra sea mayor o igual a 2(p+1).
     
 if t<(2*(m+1))
           
 disp(' ');
-disp('ERROR: EL TAMA—O DE MUESTRA ES MENOR AL MÕNIMO REQUERIDO.')
+disp('ERROR: EL TAMA√ëO DE MUESTRA ES MENOR AL M√çNIMO REQUERIDO.')
 disp(' ');
 
 else  
     
-%ConstrucciÛn del grafico de control.
+%Construcci√≥n del grafico de control.
 
 fprintf('-------------------------------------------------------------------------------------------\n');
-disp('A continuaciÛn se proceder· a construir el Gr·fico de Control del CPA.')
+disp('A continuaci√≥n se proceder√° a construir el Gr√°fico de Control del CPA.')
 disp(' ');
-disp('Deber· indicar el nivel significancia alfa (probabilidad especificada de emitir una falsa')
+disp('Deber√° indicar el nivel significancia alfa (probabilidad especificada de emitir una falsa')
 disp('alarma), cuando se le indique.')
 disp(' ');
 disp('Valores permitidos de alfa: 0.0005 0.001 0.002 0.005 0.01')
@@ -639,7 +639,7 @@ Vcrit=hdehawkins(t,m,alp5);
             parm2=correlacion(matr1,pcam,0);
             disp(parm2)
             fprintf('-------------------------------------------------------------------------------------------\n');
-            disp('Vector de medias, matriz de covarianzas y matriz de correlaciones muestral despuÈs del cambio:')
+            disp('Vector de medias, matriz de covarianzas y matriz de correlaciones muestral despu√©s del cambio:')
             disp(' ');
             disp('*Vector de medias:')
             parm3=vectmedia(matr1,t,pcam);
@@ -650,16 +650,16 @@ Vcrit=hdehawkins(t,m,alp5);
             disp('*Matriz de correlaciones:')
             parm5=correlacion(matr1,t,pcam);
             disp(parm5)
-            disp('Existe suficiente evidencia estadÌstica para afirmar, que ha ocurrido un cambio en el')
+            disp('Existe suficiente evidencia estad√≠stica para afirmar, que ha ocurrido un cambio en el')
             disp(['vector de medias, matriz de covarianzas o en ambos, en n igual a: ', num2str(j)]) 
             disp(' ');
-            disp(['El punto estimado en donde ocurre el cambio es en la observaciÛn: ', num2str(pcam)]) 
+            disp(['El punto estimado en donde ocurre el cambio es en la observaci√≥n: ', num2str(pcam)]) 
             disp(' ');
-            disp('ConclusiÛn: el proceso est· fuera de control, es decir, el proceso est· operando en presencia')
-            disp('de causas asignables de variaciÛn.')
+            disp('Conclusi√≥n: el proceso est√° fuera de control, es decir, el proceso est√° operando en presencia')
+            disp('de causas asignables de variaci√≥n.')
             disp(' ');
             disp('Arriba se presentan los vectores de medias, matrices de covarianzas y matrices de correlaciones')
-            disp('muestral, antes y despuÈs del cambio.')
+            disp('muestral, antes y despu√©s del cambio.')
             
             bandn1=true;
             
@@ -681,18 +681,18 @@ Vcrit=hdehawkins(t,m,alp5);
         disp('*Matriz de correlaciones:')
         parm8=correlacion(matr1,t,0);
         disp(parm8)
-        disp('No existe suficiente evidencia estadÌstica para afirmar, que ha ocurrido un cambio en el')
+        disp('No existe suficiente evidencia estad√≠stica para afirmar, que ha ocurrido un cambio en el')
         disp('vector de medias, matriz de covarianzas o en ambos.')
         disp(' ');
-        disp('ConclusiÛn: el proceso est· bajo control estadÌstico, es decir, el proceso opera ˙nicamente')
-        disp('en presencia de causas fortuitas de variaciÛn.')
+        disp('Conclusi√≥n: el proceso est√° bajo control estad√≠stico, es decir, el proceso opera √∫nicamente')
+        disp('en presencia de causas fortuitas de variaci√≥n.')
         disp(' ');
         disp('Arriba se presentan las estimaciones del vector de medias, matriz de covarianzas y matriz de')
         disp('correlaciones.')
         
     end
     
-    %Gr·fico de control
+    %Gr√°fico de control
     
 graficodecontrol=[GMaxi;Vcrit];
 
@@ -701,23 +701,23 @@ XxX=(1:t);
 yminimo=min(min(graficodecontrol));
 ymaximo=max(max(graficodecontrol));
 plot(XxX, GMaxi, XxX, Vcrit)
-title('GR¡FICA DE CONTROL DEL AN¡LISIS DE PUNTO DE CAMBIO.')
+title('GR√ÅFICA DE CONTROL DEL AN√ÅLISIS DE PUNTO DE CAMBIO.')
 axis([(2*(m+1)) t yminimo ymaximo])
 xlabel('MUESTRAS' )
 ylabel('Gmax,n' )
 grid on
-legend('Gmax,n','LÌmite de Control h');
+legend('Gmax,n','L√≠mite de Control h');
 datacursormode on
     
 end
 
 else
     
-%En el caso que no se encuentre disponible la dimensiÛn del vector.
+%En el caso que no se encuentre disponible la dimensi√≥n del vector.
     
 disp(' ');
 disp('ERROR: el grafico de control no puede ser construido, debido a que no')
-disp('se encuentra disponible la dimensiÛn de su vector de observaciÛn.')
+disp('se encuentra disponible la dimensi√≥n de su vector de observaci√≥n.')
 disp(' ');
     
 end
