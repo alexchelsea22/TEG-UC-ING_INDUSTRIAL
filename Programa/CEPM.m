@@ -7,7 +7,7 @@ disp('características de calidad.')
 disp(' ');
 disp('Trabajo Especial de Grado titulado: DESARROLLO DE UNA HERRAMIENTA COMPUTARIZADA PARA EL')
 disp('CONTROL ESTADÍSTICO MULTIVARIANTE DE PROCESOS BASADA EN EL ANÁLISIS DE PUNTO DE CAMBIO.')
-disp('18 de enero de 2015, diseñado por Ronald Medina y B r e a , Escuela de Ingeniería')
+disp('18 de enero de 2015, diseñado por Ronald Medina y Brea J., Escuela de Ingeniería')
 disp('Industrial, Facultad de Ingeniería, Universidad de Carabobo.')
 disp('E-mail: alexchelsea222@gmail.com')
 disp(' ');
