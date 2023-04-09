@@ -1,4 +1,4 @@
-# TEG-UC-ING_INDUSTRIAL, Programa Computarizado, elaborado en el lenguaje de programacion MATLAB, que permite monitorear muestras tomadas secuencialmente en el tiempo y estima un punto de cambio (en el caso que exista) en un proceso bajo control estadístico.
+## TEG-UC-ING_INDUSTRIAL, Programa Computarizado, elaborado en el lenguaje de programacion MATLAB, que permite monitorear muestras tomadas secuencialmente en el tiempo y estima un punto de cambio (en el caso que exista) en un proceso bajo control estadístico.
 
 Titulo: DESARROLLO DE UNA HERRAMIENTA COMPUTARIZADA PARA EL CONTROL ESTADÍSTICO MULTIVARIANTE DE PROCESOS BASADA EN EL ANÁLISIS DE PUNTO DE CAMBIO 
 
